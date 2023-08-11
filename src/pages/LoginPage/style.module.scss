@@ -1,0 +1,30 @@
+.headLogo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.mainLogin {
+  padding: 30px 22px;
+  background-color: var(--color-grey3);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+
+  h1 {
+    text-align: center;
+  }
+
+  .pLink {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 15px;
+
+    p {
+      text-align: center;
+    }
+  }
+}

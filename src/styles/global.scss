@@ -1,0 +1,18 @@
+:root {
+  --font-primary: "Inter", sans-serif;
+  --color-pink: #ff577f;
+  --color-pinkFocus: #ff427f;
+  --color-pinkNegative: #59323f;
+  --color-grey4: #121214;
+  --color-grey3: #212529;
+  --color-grey2: #343b41;
+  --color-grey1: #868e96;
+  --color-grey0: #f8f9fa;
+  --color-success: #3fe864;
+  --color-negative: #e83f5b;
+}
+
+body {
+  background: var(--color-grey4);
+  font-family: var(--font-primary);
+}
