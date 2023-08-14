@@ -35,7 +35,7 @@ export const LoginForm = ({ setUser }) => {
       reset();
       navigate("/dashboard");
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       if (
         error.response?.data.message ===
         "Incorrect email / password combination"
@@ -58,6 +58,7 @@ export const LoginForm = ({ setUser }) => {
           label="E-mail"
           type="mail"
           id="email"
+          placeholder="Digite seu e-mail"
           {...register("email")}
           error={errors.email}
           disabled={loading}
@@ -65,6 +66,7 @@ export const LoginForm = ({ setUser }) => {
         <InputPassword
           label="Senha"
           id="password"
+          placeholder="Digite sua senha"
           {...register("password")}
           error={errors.password}
           disabled={loading}
