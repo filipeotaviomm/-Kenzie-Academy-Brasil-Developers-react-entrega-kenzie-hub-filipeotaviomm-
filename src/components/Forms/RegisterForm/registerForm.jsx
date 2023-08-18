@@ -4,14 +4,13 @@ import { InputPassword } from "../InputPassword/inputPassword";
 import { Select } from "../Select/select";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerFormSchema";
-import { api } from "../../../services/api";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useContext, useState } from "react";
 import styles from "./style.module.scss";
+import { UserContext } from "../../../providers/UserContext";
 
 export const RegisterForm = () => {
+  const { userRegister } = useContext(UserContext);
+
   const {
     register,
     handleSubmit,
@@ -21,30 +20,10 @@ export const RegisterForm = () => {
     resolver: zodResolver(registerFormSchema),
   });
 
-  const navigate = useNavigate();
-
   const [loading, setLoading] = useState(false);
 
-  const userRegister = async (formData) => {
-    try {
-      setLoading(true);
-      await api.post("/users", formData);
-      toast.success("Conta criada com sucesso");
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-      reset();
-      navigate("/");
-    } catch (error) {
-      console.log(error);
-      if (error.response?.data.message === "Email already exists") {
-        toast.error("E-mail já cadastrado");
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const registration = (formData) => {
-    userRegister(formData);
+    userRegister(formData, setLoading, reset);
   };
 
   return (
@@ -54,6 +33,7 @@ export const RegisterForm = () => {
         onSubmit={handleSubmit(registration)}
       >
         <Input
+          className={styles.inputName}
           label="Nome"
           type="text"
           placeholder="Digite seu nome"
@@ -63,6 +43,7 @@ export const RegisterForm = () => {
           disabled={loading}
         />
         <Input
+          className={styles.inputEmail}
           label="E-mail"
           type="email"
           placeholder="Digite aqui seu e-mail"
@@ -72,6 +53,7 @@ export const RegisterForm = () => {
           disabled={loading}
         />
         <InputPassword
+          className={styles.inputPassword}
           label="Senha"
           placeholder="Digite aqui sua senha"
           id="password"
@@ -80,6 +62,7 @@ export const RegisterForm = () => {
           disabled={loading}
         />
         <InputPassword
+          className={styles.inputConfirmPassword}
           label="Confirmar Senha"
           placeholder="Digite novamente sua senha"
           id="confirmPassword"
@@ -88,6 +71,7 @@ export const RegisterForm = () => {
           disabled={loading}
         />
         <Input
+          className={styles.inputBio}
           label="Bio"
           type="text"
           placeholder="Fale sobre você"
@@ -97,6 +81,7 @@ export const RegisterForm = () => {
           disabled={loading}
         />
         <Input
+          className={styles.inputContact}
           label="Contato"
           type="text"
           placeholder="Opção de contato"
@@ -113,14 +98,13 @@ export const RegisterForm = () => {
           disabled={loading}
         />
         <button
-          className="p2 lg standardButton maroon"
+          className={`p2 lg standardButton maroon ${styles.btnAnime}`}
           type="submit"
           disabled={loading}
         >
           {loading ? "Cadastrando..." : "Cadastrar"}
         </button>
       </form>
-      <ToastContainer autoClose={2 * 1000} />
     </div>
   );
 };

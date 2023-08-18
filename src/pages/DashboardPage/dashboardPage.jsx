@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import { HeaderDashboard } from "../../components/HeaderDashBoard/headerDashboard";
 import styles from "./style.module.scss";
+import { UserContext } from "../../providers/UserContext";
 
-export const DashboardPage = ({ user, userLogout }) => {
+export const DashboardPage = () => {
+  const { user } = useContext(UserContext);
   return (
     <div className="containerDashboard">
-      <HeaderDashboard userLogout={userLogout} />
+      <HeaderDashboard />
       <main>
         <div className={styles.userName}>
           <h3 className="title">Olá, {user?.name}</h3>

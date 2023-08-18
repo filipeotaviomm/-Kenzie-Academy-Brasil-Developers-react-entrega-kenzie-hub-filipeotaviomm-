@@ -7,7 +7,7 @@ export const Select = forwardRef(({ label, id, error, ...rest }, ref) => {
       <label className="p sm" htmlFor={id}>
         {label}
       </label>
-      <select className="p lg" id={id} ref={ref} {...rest}>
+      <select className="optionSelect" id={id} ref={ref} {...rest}>
         <option className="optionSelect" value="">
           Selecione um módulo
         </option>

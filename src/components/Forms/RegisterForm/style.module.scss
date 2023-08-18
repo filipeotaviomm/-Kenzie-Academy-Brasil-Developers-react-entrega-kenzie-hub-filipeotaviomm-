@@ -2,4 +2,113 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
+
+  .inputName {
+    animation: rollRightName 1.3s;
+
+    @keyframes rollRightName {
+      0% {
+        transform: translateX(-130%);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  .inputPassword {
+    animation: rollRightPassword 1.8s;
+
+    @keyframes rollRightPassword {
+      0% {
+        transform: translateX(-180%);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  .inputBio {
+    animation: rollRightBio 1.8s;
+
+    @keyframes rollRightBio {
+      0% {
+        transform: translateX(-180%);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  .inputEmail {
+    animation: rollRightEmail 1.3s;
+
+    @keyframes rollRightEmail {
+      0% {
+        transform: translateX(130%);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  .inputConfirmPassword {
+    animation: rollRightConfirmPassword 1.8s;
+
+    @keyframes rollRightConfirmPassword {
+      0% {
+        transform: translateX(180%);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  .inputContact {
+    animation: rollRightinputContact 1.8s;
+
+    @keyframes rollRightinputContact {
+      0% {
+        transform: translateX(180%);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  .btnAnime {
+    animation: fadeInBtn 8s;
+
+    @keyframes fadeInBtn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
 }

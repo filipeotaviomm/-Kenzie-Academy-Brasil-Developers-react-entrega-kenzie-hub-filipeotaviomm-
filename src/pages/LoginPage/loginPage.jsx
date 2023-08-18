@@ -4,7 +4,7 @@ import Logo from "../../assets/Logo.svg";
 import pageStyles from "../../styles/modules/pageBox.module.scss";
 import styles from "./style.module.scss";
 
-export const LoginPage = ({ setUser }) => {
+export const LoginPage = () => {
   return (
     <div className={pageStyles.pageBox}>
       <div className="container">
@@ -13,7 +13,7 @@ export const LoginPage = ({ setUser }) => {
         </header>
         <main className={styles.mainLogin}>
           <h1 className="title">Login</h1>
-          <LoginForm setUser={setUser} />
+          <LoginForm />
           <div className={styles.pLink}>
             <p className="p3 bold">Ainda não possui uma conta?</p>
             <Link className="p2 lg standardButton grey" to="/register">
