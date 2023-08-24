@@ -1,0 +1,40 @@
+.card {
+  background-color: var(--color-grey4);
+  border-radius: 4px;
+  padding: 13px clamp(17px, 5vw, 22px);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  .spanButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .buttonEditRemove {
+      color: var(--color-grey0);
+      font-size: 19px;
+
+      &:hover {
+        filter: brightness(0.7);
+      }
+    }
+
+    @media (min-width: 400px) {
+      justify-content: right;
+      gap: 10px;
+    }
+  }
+
+  @media (min-width: 400px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

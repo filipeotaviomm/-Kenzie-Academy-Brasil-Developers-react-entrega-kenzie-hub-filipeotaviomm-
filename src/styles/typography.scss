@@ -2,6 +2,25 @@
   color: var(--color-grey0);
   font-size: 18px;
   font-weight: 700;
+  line-height: 24px;
+
+  &.sm {
+    font-size: 14px;
+  }
+}
+
+.title2 {
+  color: var(--color-grey0);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.title3 {
+  color: var(--color-grey0);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 .p {
@@ -64,4 +83,11 @@
   color: var(--color-grey0);
   font-size: 14px;
   font-weight: 700;
+}
+
+.close {
+  font-weight: 400;
+  color: var(--color-grey1);
+  font-size: 16px;
+  line-height: 26px;
 }

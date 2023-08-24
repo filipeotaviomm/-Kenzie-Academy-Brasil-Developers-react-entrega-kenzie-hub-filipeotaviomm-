@@ -1,0 +1,9 @@
+.list {
+  background-color: var(--color-grey3);
+  border-radius: 4px;
+  padding: clamp(16px, 5vw, 22px) clamp(10px, 5vw, 22px);
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6.5px, 3vw, 10px);
+}
